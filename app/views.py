@@ -2,6 +2,7 @@ from app import app, aprs
 from flask import render_template
 from flask_googlemaps import Map, icons
 import time
+import config
 
 @app.route('/', methods=['GET'])
 def homepage():
@@ -23,7 +24,7 @@ def homepage():
 	)
 	return render_template(
 		'index.html',
-		name='Grayson',
+		name=config.name,
 		loc=loc,
 		cloc_map=mymap
 	)
