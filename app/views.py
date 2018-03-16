@@ -4,7 +4,7 @@ from flask_googlemaps import Map, icons
 import time
 import config
 
-@app.route('/', methods=['GET'])
+@app.route('/where', methods=['GET'])
 def homepage():
 	loc = aprs.location()
 	loc['entries'][0]['lasttime'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(int(loc['entries'][0]['lasttime'])))
